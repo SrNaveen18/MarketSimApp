@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MarketSim</string>
+
+    <string name="error_no_internet">Please check your internet connection</string>
+    <string name="dialog_close">Close</string>
+
+    <string name="lbl_bottom_repo">Repo</string>
+    <string name="lbl_bottom_dummy1">Dummy1</string>
+    <string name="lbl_bottom_dummy2">Dummy2</string>
+
+</resources>

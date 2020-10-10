@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/publicRepoListFragment">
+
+    <fragment
+        android:id="@+id/publicRepoListFragment"
+        android:name="com.example.marketsimapp.ui.publicrepo.PublicRepoListFragment"
+        android:label="PublicRepoListFragment" >
+        <action
+            android:id="@+id/action_publicRepoListFragment_to_publicRepoDetailsFragment"
+            app:destination="@id/publicRepoDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dummyFragment1"
+        android:name="com.example.marketsimapp.ui.dummyfragment.DummyFragment1"
+        android:label="DummyFragment1" />
+    <fragment
+        android:id="@+id/dummyFragment"
+        android:name="com.example.marketsimapp.ui.dummyfragment.DummyFragment"
+        android:label="DummyFragment" />
+    <fragment
+        android:id="@+id/publicRepoDetailsFragment"
+        android:name="com.example.marketsimapp.ui.publirepodetails.PublicRepoDetailsFragment"
+        android:label="PublicRepoDetailsFragment" >
+        <argument
+            android:name="RepoItem"
+            app:argType="com.example.marketsimapp.model.PublicRepoItem" />
+    </fragment>
+</navigation>

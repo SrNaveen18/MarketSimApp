@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="publicRepoDetailsVM"
+            type="com.example.marketsimapp.ui.publirepodetails.PublicRepoDetailsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image"
+            loadImage="@{publicRepoDetailsVM.repoItem.owner.avatarUrl}"
+            setHeightDividedBy="@{2}"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size_16dp"
+            android:text="@{publicRepoDetailsVM.repoItem.name}"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/size_16dp"
+            android:paddingEnd="@dimen/size_16dp"
+            android:text="@{publicRepoDetailsVM.repoItem.description}"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toBottomOf="@id/txtName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
