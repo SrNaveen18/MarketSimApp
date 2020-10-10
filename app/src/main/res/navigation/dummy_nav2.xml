@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dummy_nav2"
+    app:startDestination="@id/dummyFragment12">
+
+    <fragment
+        android:id="@+id/dummyFragment12"
+        android:name="com.example.marketsimapp.ui.dummyfragment.DummyFragment1"
+        android:label="DummyFragment1" />
+</navigation>

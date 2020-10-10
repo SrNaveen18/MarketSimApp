@@ -2,7 +2,6 @@ package com.example.marketsimapp.ui.publicrepo
 
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.marketsimapp.BR
@@ -13,6 +12,7 @@ import com.example.marketsimapp.extension.isNetConnected
 import com.example.marketsimapp.model.PublicRepoItem
 import com.example.marketsimapp.ui.publicrepo.pagingadapter.LoadingFooterAdapter
 import com.example.marketsimapp.ui.publicrepo.pagingadapter.PagingAdapter
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_public_repo.*
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
@@ -83,21 +83,19 @@ class PublicRepoListFragment : BaseFragment<FragmentPublicRepoBinding, PublicRep
     private fun checkInternetAvailable(): Boolean {
         val hasInternet = requireActivity().isNetConnected()
         return if (!hasInternet) {
-            showMessageAlert(getString(R.string.error_no_internet))
+            showSnackBar()
             false
         } else {
             true
         }
     }
 
-    private fun showMessageAlert(message: String) {
-        val dialog = AlertDialog.Builder(requireActivity())
-        dialog.setMessage(message)
-        dialog.setCancelable(false)
-        dialog.setPositiveButton(getString(R.string.dialog_close)) { dialog, _ ->
-            requireActivity().finish()
-            dialog?.dismiss()
-        }
-        dialog.create().show()
+    private fun showSnackBar() {
+        val snack = Snackbar.make(
+            requireView(),
+            getString(R.string.error_no_internet),
+            Snackbar.LENGTH_LONG
+        )
+        snack.show()
     }
 }

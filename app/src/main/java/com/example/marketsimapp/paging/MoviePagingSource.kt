@@ -10,11 +10,11 @@ class PublicRepoPagingSource(private val repository: PublicRepoRepository) :
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, PublicRepoItem> {
         return try {
             val position = params.key ?: initialPageIndex
-            val repoList = repository.getRepoList(page = position)
+            val repoList = repository.getRepoList(since = position)
             LoadResult.Page(
                 data = repoList,
-                prevKey = if (position == initialPageIndex) null else position - 1,
-                nextKey = if (repoList.isNullOrEmpty()) null else position + 1
+                prevKey = null,
+                nextKey = if (repoList.isNullOrEmpty()) null else repoList.last().id
             )
         } catch (e: Exception) {
             LoadResult.Error(e)

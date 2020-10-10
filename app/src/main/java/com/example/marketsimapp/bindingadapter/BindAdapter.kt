@@ -5,12 +5,14 @@ import android.view.View
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 
 object BindAdapter {
     @BindingAdapter("loadImage")
     @JvmStatic
     fun loadImage(imageView: AppCompatImageView,url : String?){
-        Glide.with(imageView.context).load(url).into(imageView)
+        Glide.with(imageView.context).load(url).diskCacheStrategy(DiskCacheStrategy.ALL)
+            .into(imageView)
     }
 
     @BindingAdapter("setHeightDividedBy")

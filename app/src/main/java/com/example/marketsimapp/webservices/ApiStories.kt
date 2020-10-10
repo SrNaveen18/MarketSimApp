@@ -9,7 +9,8 @@ const val BASE_URL = "https://api.github.com/"
 interface ApiStories {
     @GET("repositories")
     suspend fun getRepoList(
-        @Query("page") page: Int): List<PublicRepoItem>
+        @Query("since") since: Int
+    ): List<PublicRepoItem>
 
 }
 

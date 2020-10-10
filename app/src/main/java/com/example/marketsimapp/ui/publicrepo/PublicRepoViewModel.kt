@@ -26,5 +26,5 @@ class PublicRepoViewModel(private val reposRepository: PublicRepoRepository) : B
         currentSearchResult = newResult
         return newResult
     }
-    
+
 }

@@ -6,10 +6,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class PublicRepoRepository(private val apiStories: ApiStories) {
-    suspend fun getRepoList(page: Int): List<PublicRepoItem> {
+    suspend fun getRepoList(since: Int): List<PublicRepoItem> {
         return withContext(Dispatchers.IO) {
             apiStories.getRepoList(
-                page = page
+                since = since
             )
         }
     }

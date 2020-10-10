@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/publicRepoListFragment"
+        android:id="@+id/home"
         android:icon="@drawable/ic_baseline_apps_24"
         android:title="@string/lbl_bottom_repo" />
 
     <item
-        android:id="@+id/dummyFragment"
+        android:id="@+id/dummy_nav1"
         android:icon="@drawable/ic_baseline_apps_24"
         android:title="@string/lbl_bottom_dummy1" />
 
     <item
-        android:id="@+id/dummyFragment1"
+        android:id="@+id/dummy_nav2"
         android:icon="@drawable/ic_baseline_apps_24"
         android:title="@string/lbl_bottom_dummy2" />
 
